@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WA_StrayDogHelper_v1.Models.DomainModels.Dog>
+
+
+
+
+
+<div class="container mt-3 mb-3" style="width: 65rem;">
+    <h3 class="mb-3">Dogs added by me</h3>
+
+
+    <div class="row pl-4 ml-4 mt-4">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-4">
+                <div class="card" style="width: 18rem;" style="border-color: black;">
+                    <img class="card-img-top" src="~/Images/AdoptionDogImages/@item.ImageName" alt="Card image cap" style="height: 400px;">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        @{
+                            var ShortContent = item.ShortLifeStory.ToString().Substring(0, item.ShortLifeStory.IndexOf("."));
+                        }
+
+                        <p class="card-text"> @ShortContent.</p>
+
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Find out more</a>
+
+                        <br />
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-primary mt-2" style="border-color:dimgrey">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger mt-2" style="border-color:dimgrey">Delete</a>
+
+
+
+                    </div>
+                </div>
+            </div>
+        }
+
+
+
+    </div>
+
+    
+</div>
+
+<br />
+<a asp-action="Create" class="btn btn-info" mr-5>Add New</a>
+<a asp-action="ListDogCategories" class="btn btn-warning ml-2">Back to list</a>
+<br />
+
+
+

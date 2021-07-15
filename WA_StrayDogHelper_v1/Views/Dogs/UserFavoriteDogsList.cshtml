@@ -1,0 +1,37 @@
+﻿@model IEnumerable<WA_StrayDogHelper_v1.Models.DomainModels.FavoriteDog>
+
+
+
+<h1>List of yours favorite dogs</h1>
+
+
+
+<br />
+@foreach (var item in Model)
+{
+    <div class="card" style="width:1000px;">
+        <div class="row">
+
+            <div class="card-header" style="background-color:lightblue">
+                @item.Dog.Size breed dog
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title">@item.Dog.Name</h5>
+                @{
+                    var ShortContent = item.Dog.ShortLifeStory.ToString().Substring(0, item.Dog.ShortLifeStory.IndexOf("."));
+                }
+                <p class="card-text">@ShortContent</p>
+                <a asp-action="Details" asp-route-id="@item.Dog.Id" class="btn btn-outline-primary mr-3">Find out more</a>
+                <a asp-action="ContactForAdoption" asp-route-id="@item.Dog.UserId" class="btn btn-outline-success mr-3">Adopt</a>
+               
+                <a asp-action="DeleteFromFavorites" asp-route-id="@item.Id" class="btn btn-outline-danger">Delete</a>
+            </div>
+
+
+            <img src="~/Images/AdoptionDogImages/@item.Dog.ImageName" style="width:200px; height:155px;" />
+        </div>
+
+    </div>
+    <br />
+}

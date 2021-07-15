@@ -1,0 +1,74 @@
+﻿@model WA_StrayDogHelper_v1.Models.DomainModels.RequestDonationFood
+
+
+
+<h1>Create</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProblemTitle" class="control-label"></label>
+                <input asp-for="ProblemTitle" class="form-control" />
+                <span asp-validation-for="ProblemTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProblemDescription" class="control-label"></label>
+                <input asp-for="ProblemDescription" class="form-control" />
+                <span asp-validation-for="ProblemDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FoodType" class="control-label"></label>
+                <select asp-for="FoodType" class="form-control">
+                    <option>
+                        Kibble_Dry
+                    </option>
+                    <option>
+                        Canned
+                    </option>
+                    <option>
+                        Semi_Moist
+                    </option>
+                    <option>
+                        Home_Cooked
+                    </option>
+                    <option>
+                        Raw
+                    </option>
+                    <option>
+                        Any_Kind
+                    </option>
+                </select>
+                <span asp-validation-for="FoodType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AmountOfFoodRequired" class="control-label"></label>
+                <input asp-for="AmountOfFoodRequired" class="form-control" />
+                <span asp-validation-for="AmountOfFoodRequired" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DogName" class="control-label"></label>
+                <input asp-for="DogName" class="form-control" />
+                <span asp-validation-for="DogName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label"></label>
+                <input asp-for="ImageFile" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

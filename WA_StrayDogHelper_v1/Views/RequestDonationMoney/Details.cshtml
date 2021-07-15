@@ -1,0 +1,76 @@
+﻿@model WA_StrayDogHelper_v1.Models.DomainModels.RequestDonationMoney
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims;
+@inject SignInManager<WA_StrayDogHelper_v1.Models.IdentityModels.ApplicationUser> SignInManager
+@inject UserManager<WA_StrayDogHelper_v1.Models.IdentityModels.ApplicationUser> UserManager
+
+
+
+
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <img src="~/Images/DonationImages/@Model.ImageName" style="width:500px; height:500px;">
+        </div>
+        <div class="col-6">
+            <h4>@Model.ProblemTitle</h4>
+            <hr style="background-color: red;">
+            <div>
+                <h5 class="d-inline p-2">Name of dog: </h5> <p class="d-inline p-2" style="font-size: large;">@Model.DogName</p>
+            </div>
+            <div class="mt-2">
+                <h5 class="d-inline p-2">Posted by: </h5> <p class="d-inline p-2" style="font-size: large;">  @Model.User.Email</p>
+            </div>
+
+            <div class="mt-2">
+                <h5 class="d-inline p-2">Required: </h5> <p class="d-inline p-2" style="font-size: large;">@Model.AmountOfMoneyRequired $</p>
+            </div>
+
+            <div class="mt-2">
+                <h5 class="d-inline p-2">Donated: </h5> <p class="d-inline p-2" style="font-size: large;">@Model.AmountOfDonatedMoney $</p>
+            </div>
+
+            <div class="mt-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                </svg>
+                <h5 class="d-inline p-2">End date: </h5> <p class="d-inline p-2" style="font-size: large;">@Model.EndDate</p>
+            </div>
+
+
+            <div class="mt-3">
+                <h5 class="d-inline p-2">Short info: </h5> <p class="d-inline p-2" style="font-size: large;">@Model.ProblemDescription</p>
+            </div>
+
+
+            <br />
+            <br />
+            @{
+                var loggedInUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (Model.UserId.Equals(loggedInUserId))
+                {
+
+
+                    <div class="mr-4 pr-4">
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-primary mr-2" style="border-color:dimgrey">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-outline-danger mr-2" style="border-color:dimgrey">Delete</a>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                }
+                else
+                {
+                    <a asp-action="DonirajVtoro" asp-route-id="@Model.Id" class="btn btn-primary mr-2">Donate</a>
+                    <a asp-action="Index">Back to List</a>
+                }
+            }
+
+
+        </div>
+
+
+        
+
+    </div>
+
+    

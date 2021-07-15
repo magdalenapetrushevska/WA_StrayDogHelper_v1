@@ -1,0 +1,106 @@
+﻿<br />
+<div class="row">
+    <div class="col-6 ">
+    <div>
+        <a class="btn btn-warning btn-lg mr-3" asp-action="Create">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+            </svg>   Add New
+        </a>
+
+        <a class="btn btn-info btn-lg" asp-action="DogsAddedByUser">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-check" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z" />
+            </svg>   My List
+        </a>
+    </div>
+        </div>
+    <div class="col-6">
+        <div class="ml-5 pl-5">
+            <a class="btn btn-light btn-lg" asp-action="UserFavoriteDogsList" style="background-color:#e8e8e8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-heart" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z" />
+                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
+                </svg>   My Favorite Dogs
+            </a>
+            <a class="btn btn-primary btn-lg ml-2 pl-2" asp-action="VidiKontakti" asp-controller="Messages">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots-fill" viewBox="0 0 16 16">
+                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                </svg>   Messages
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5 mb-3" style="width: 65rem;">
+    <div class="row pl-4 ml-4">
+        <div class="col">
+
+            <div class="card text-center">
+                <img class="card-img-top" src="~/Images/ProjectImages/allDogs.jpg" alt="Card image cap" style="height:350px;">
+                <div class="card-body">
+                    <a asp-action="ListAllDogs"> <h5 class="card-text">All dogs</h5> </a>
+                </div>
+            </div>
+
+        </div>
+        <!--style="width: 50rem;"  vo card text-center -->
+    </div>
+    <div class="row mt-5 pl-4 ml-4">
+        <div class="col-4">
+            <div class="card text-center">
+                <img class="card-img-top" src="~/Images/ProjectImages/smallDog.jpg" alt="Card image cap" style="height:350px;">
+                <div class="card-body">
+                    <a asp-action="ListSmallDogs"> <h5 class="card-text">Small dog breeds</h5> </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card text-center">
+                <img class="card-img-top" src="~/Images/ProjectImages/mediumDog.jpg" alt="Card image cap" style="height:350px;">
+                <div class="card-body">
+                    <a asp-action="ListMediumDogs"> <h5 class="card-text">Medium dog breeds</h5> </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card text-center">
+                <img class="card-img-top" src="~/Images/ProjectImages/largeDog.jpg" alt="Card image cap" style="height:350px;">
+                <div class="card-body">
+                    <a asp-action="ListLargeDogs">  <h5 class="card-text">Large dog breeds</h5> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5 pl-4 ml-4">
+        <div class="col-6">
+            <div class="card text-center">
+                <img class="card-img-top" src="~/Images/ProjectImages/babyDog.jpg" alt="Card image cap" style="height:350px;">
+                <div class=" card-body">
+                    <a asp-action="ListBabyDogs"> <h5 class="card-text">Baby dogs</h5> </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="card text-center">
+                <img class="card-img-top" src="~/Images/ProjectImages/adultDog.jpg" alt="Card image cap" style="height:350px;">
+                <div class=" card-body">
+                    <a asp-action="ListAdultDogs">  <h5 class="card-text">Adult dogs</h5> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5 pl-4 ml-4">
+        <div class="col">
+            <div class="card text-center">
+                <img class="card-img-top" src="~/Images/ProjectImages/disabledDog.jpg" alt="Card image cap" style="height:350px;">
+                <div class=" card-body">
+                    <a asp-action="ListDisabledDogs"> <h5 class="card-text">Disabled dogs</h5> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

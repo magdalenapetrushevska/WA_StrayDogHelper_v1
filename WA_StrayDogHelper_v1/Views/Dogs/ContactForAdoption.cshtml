@@ -1,0 +1,11 @@
+﻿@model WA_StrayDogHelper_v1.Models.IdentityModels.ApplicationUser
+
+
+<h4>Contact for adoption:</h4>
+<h5 class="d-inline">Username:</h5>
+<h6 class="d-inline ml-3">@Model.UserName</h6>
+
+<br />
+<br />
+<a asp-controller="Messages" asp-action="Create" asp-route-id="@Model.Id" class="btn btn-lg btn-primary mr-3">Send a message</a>
+<a asp-action="Index" class="btn bnt-lg btn-link">Back to list</a>
